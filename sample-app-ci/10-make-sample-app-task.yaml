@@ -10,7 +10,7 @@ spec:
     - name: src
   steps:
     - name: make-build
-      image: registry.redhat.io/rhel8/go-toolset
+      image: "cgregistry.capgroup.com/registry.redhat.io/rhel8/go-toolset:1.13.4"
       workingDir: $(workspaces.src.path)/$(params.app-path)
       command: ["/usr/bin/make"]
       args:

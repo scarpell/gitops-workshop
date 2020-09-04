@@ -27,7 +27,7 @@ spec:
       description: |
         The base image for the task.
       type: string
-      default: alpine/git:latest
+      default: "cgregistry.capgroup.com/docker.io/alpine/git:v2.26.2"
 
     - name: GIT_USER_NAME
       type: string

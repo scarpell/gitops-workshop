@@ -4,10 +4,20 @@ kind: ArgoCD
 metadata:
   name: workshop-argocd
 spec:
+  # Image to use for all ArgoCD server components: server, application-controller, repo-server
+  # by default this is 'argoproj/argocd:latest'
+  image: cgregistry.capgroup.com/argoproj/argocd:latest
+
   grafana:
-    enabled: false
+    enabled: false 
   prometheus:
     enabled: false 
+  dex:
+    image: cgregistry.capgroup.com/quay.io/dexidp/dex
+    version: v2.22.0
+  redis:
+    image: cgregistry.capgroup.com/redis
+    version: 5.0.8 
   server:
     route:
       enabled: true
